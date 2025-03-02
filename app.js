@@ -16,6 +16,7 @@ const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
 
+// START express app
 const app = express();
 
 app.set('view engine', 'pug');
@@ -114,11 +115,6 @@ app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/booking', bookingRouter);
-
-app.use((req, res, next) => {
-  console.log(`🔍 Requested: ${req.url}`);
-  next();
-});
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
