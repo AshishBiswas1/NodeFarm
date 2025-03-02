@@ -1,7 +1,6 @@
 export const displayMap = () => {
   // Check if we are on the page with the map element (example: /tour.html)
   if (!window.location.pathname.includes('tour')) {
-    console.log('Not on the tour page, skipping map initialization.');
     return; // Exit early if not on the correct page
   }
 
@@ -14,7 +13,6 @@ export const displayMap = () => {
     const mapElement = document.getElementById('map');
 
     if (!mapElement) {
-      console.log('Map element not found on this page.');
       return; // Exit early if the map element doesn't exist
     }
 
@@ -26,8 +24,6 @@ export const displayMap = () => {
 
     // Check if Mapbox GL JS is already loaded
     if (typeof mapboxgl === 'undefined') {
-      console.log('Mapbox GL JS not found, dynamically loading the library...');
-
       // If not loaded, add the script dynamically and wait for it to load
       const script = document.createElement('script');
       script.src = 'https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js';
@@ -47,8 +43,6 @@ function initializeMap(mapElement) {
   const locations = JSON.parse(mapElement.dataset.locations);
 
   if (!locations || locations.length === 0) {
-    console.error('No locations data found.');
-    return;
   }
 
   // Your Mapbox access token
