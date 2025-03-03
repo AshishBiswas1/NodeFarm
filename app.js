@@ -9,11 +9,11 @@ const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
-const tourRouter = require('./routes/tourRoutes');
-const userRouter = require('./routes/userRoutes');
-const reviewRouter = require('./routes/reviewRoutes');
-const bookingRouter = require('./routes/bookingRoutes');
-const viewRouter = require('./routes/viewRoutes');
+const tourRouter = require('./Routes/tourRoutes');
+const userRouter = require('./Routes/userRoutes');
+const reviewRouter = require('./Routes/reviewRoutes');
+const bookingRouter = require('./Routes/bookingRoutes');
+const viewRouter = require('./Routes/viewRoutes');
 
 // START express app
 const app = express();
